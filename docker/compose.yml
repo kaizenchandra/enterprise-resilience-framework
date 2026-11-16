@@ -1,0 +1,130 @@
+{
+  "services": {
+    "payment-service-simulator": {
+      "build": {
+        "context": "..",
+        "dockerfile": "docker/Dockerfile",
+        "args": {
+          "SERVICE": "payment-service-simulator"
+        }
+      },
+      "ports": [
+        "127.0.0.1:18082:8082"
+      ],
+      "environment": {
+        "DEMO_ADMIN_TOKEN": "${DEMO_ADMIN_TOKEN:?Set DEMO_ADMIN_TOKEN}",
+        "RESILIENCE_RETRY_BUDGET_MODE": "redis",
+        "RESILIENCE_RETRY_BUDGET_REDIS_URI": "redis://:${REDIS_PASSWORD:?Set REDIS_PASSWORD}@retry-budget:6379",
+        "RESILIENCE_RETRY_BUDGET_NAMESPACE": "resilience-compose"
+      },
+      "mem_limit": "512m",
+      "cpus": 2,
+      "stop_grace_period": "15s",
+      "image": "resilience/payment-service-simulator:validation-v2",
+      "depends_on": {
+        "retry-budget": {
+          "condition": "service_healthy"
+        }
+      }
+    },
+    "order-service": {
+      "build": {
+        "context": "..",
+        "dockerfile": "docker/Dockerfile",
+        "args": {
+          "SERVICE": "order-service"
+        }
+      },
+      "ports": [
+        "127.0.0.1:18081:8081"
+      ],
+      "environment": {
+        "DEMO_TARGET": "http://payment-service-simulator:8082/quote",
+        "RESILIENCE_RETRY_BUDGET_MODE": "redis",
+        "RESILIENCE_RETRY_BUDGET_REDIS_URI": "redis://:${REDIS_PASSWORD:?Set REDIS_PASSWORD}@retry-budget:6379",
+        "RESILIENCE_RETRY_BUDGET_NAMESPACE": "resilience-compose"
+      },
+      "mem_limit": "512m",
+      "cpus": 2,
+      "stop_grace_period": "15s",
+      "image": "resilience/order-service:validation-v2",
+      "depends_on": {
+        "retry-budget": {
+          "condition": "service_healthy"
+        }
+      }
+    },
+    "demo-client": {
+      "build": {
+        "context": "..",
+        "dockerfile": "docker/Dockerfile",
+        "args": {
+          "SERVICE": "demo-client"
+        }
+      },
+      "ports": [
+        "127.0.0.1:18080:8080"
+      ],
+      "environment": {
+        "DEMO_TARGET": "http://order-service:8081/orders/quote",
+        "RESILIENCE_RETRY_BUDGET_MODE": "redis",
+        "RESILIENCE_RETRY_BUDGET_REDIS_URI": "redis://:${REDIS_PASSWORD:?Set REDIS_PASSWORD}@retry-budget:6379",
+        "RESILIENCE_RETRY_BUDGET_NAMESPACE": "resilience-compose"
+      },
+      "mem_limit": "512m",
+      "cpus": 2,
+      "stop_grace_period": "15s",
+      "image": "resilience/demo-client:validation-v2",
+      "depends_on": {
+        "retry-budget": {
+          "condition": "service_healthy"
+        }
+      }
+    },
+    "prometheus": {
+      "image": "prom/prometheus:v3.5.0",
+      "volumes": [
+        "./prometheus.yml:/etc/prometheus/prometheus.yml:ro",
+        "./alerts.yml:/etc/prometheus/alerts.yml:ro"
+      ],
+      "ports": [
+        "127.0.0.1:9090:9090"
+      ]
+    },
+    "grafana": {
+      "image": "grafana/grafana:12.1.1",
+      "ports": [
+        "127.0.0.1:3000:3000"
+      ],
+      "environment": {
+        "GF_SECURITY_ADMIN_PASSWORD": "${GRAFANA_PASSWORD:?Set GRAFANA_PASSWORD}"
+      },
+      "volumes": [
+        "./grafana:/etc/grafana/provisioning:ro",
+        "./dashboards:/var/lib/grafana/dashboards:ro"
+      ]
+    },
+    "retry-budget": {
+      "image": "redis:7.4.6-alpine",
+      "command": [
+        "sh",
+        "-c",
+        "exec redis-server --requirepass \"$$REDISCLI_AUTH\" --maxmemory 64mb --maxmemory-policy noeviction --save \"\" --appendonly no"
+      ],
+      "environment": {
+        "REDISCLI_AUTH": "${REDIS_PASSWORD:?Set REDIS_PASSWORD}"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD-SHELL",
+          "test \"$$(REDISCLI_AUTH= redis-cli ping 2>/dev/null)\" != PONG && test \"$$(redis-cli ping 2>/dev/null)\" = PONG"
+        ],
+        "interval": "2s",
+        "timeout": "1s",
+        "retries": 20
+      },
+      "mem_limit": "128m",
+      "cpus": 0.5
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "healthyConsecutive": 8,
+  "observations": [
+    {
+      "status": 503,
+      "elapsedMillis": 748.4138329746202
+    },
+    {
+      "status": 200,
+      "elapsedMillis": 330.1185420132242
+    },
+    {
+      "status": 200,
+      "elapsedMillis": 91.74450000864454
+    },
+    {
+      "status": 200,
+      "elapsedMillis": 45.98691701539792
+    },
+    {
+      "status": 200,
+      "elapsedMillis": 20.96041597542353
+    },
+    {
+      "status": 200,
+      "elapsedMillis": 12.819083000067621
+    },
+    {
+      "status": 200,
+      "elapsedMillis": 44.17758298222907
+    },
+    {
+      "status": 200,
+      "elapsedMillis": 116.57658297917806
+    },
+    {
+      "status": 200,
+      "elapsedMillis": 34.24220799934119
+    }
+  ]
+}

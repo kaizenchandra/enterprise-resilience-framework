@@ -1,0 +1,717 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "ConfigMap",
+      "metadata": {
+        "name": "resilience-demo"
+      },
+      "data": {
+        "MANAGEMENT_SERVER_PORT": "9091",
+        "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE": "health,prometheus,resilience",
+        "SPRING_LIFECYCLE_TIMEOUT_PER_SHUTDOWN_PHASE": "10s",
+        "RESILIENCE_RETRY_BUDGET_MODE": "redis",
+        "RESILIENCE_RETRY_BUDGET_NAMESPACE": "resilience-demo",
+        "RESILIENCE_RETRY_BUDGET_CAPACITY": "100",
+        "RESILIENCE_RETRY_BUDGET_REFILL_PER_SECOND": "10"
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "name": "payment-service-simulator"
+      },
+      "spec": {
+        "replicas": 2,
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxSurge": 1,
+            "maxUnavailable": 0
+          }
+        },
+        "selector": {
+          "matchLabels": {
+            "app": "payment-service-simulator"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "payment-service-simulator"
+            }
+          },
+          "spec": {
+            "terminationGracePeriodSeconds": 20,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "payment-service-simulator",
+                "image": "resilience/payment-service-simulator:1.0.0",
+                "imagePullPolicy": "IfNotPresent",
+                "ports": [
+                  {
+                    "containerPort": 8082
+                  },
+                  {
+                    "containerPort": 9091
+                  }
+                ],
+                "envFrom": [
+                  {
+                    "configMapRef": {
+                      "name": "resilience-demo"
+                    }
+                  }
+                ],
+                "env": [
+                  {
+                    "name": "DEMO_ADMIN_TOKEN",
+                    "valueFrom": {
+                      "secretKeyRef": {
+                        "name": "resilience-demo",
+                        "key": "admin-token"
+                      }
+                    }
+                  },
+                  {
+                    "name": "RESILIENCE_RETRY_BUDGET_REDIS_URI",
+                    "valueFrom": {
+                      "secretKeyRef": {
+                        "name": "resilience-demo",
+                        "key": "redis-uri"
+                      }
+                    }
+                  }
+                ],
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "resources": {
+                  "requests": {
+                    "cpu": "250m",
+                    "memory": "256Mi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "512Mi"
+                  }
+                },
+                "readinessProbe": {
+                  "httpGet": {
+                    "path": "/actuator/health",
+                    "port": 9091
+                  },
+                  "initialDelaySeconds": 10
+                },
+                "livenessProbe": {
+                  "httpGet": {
+                    "path": "/actuator/health",
+                    "port": 9091
+                  },
+                  "initialDelaySeconds": 30
+                },
+                "startupProbe": {
+                  "httpGet": {
+                    "path": "/actuator/health",
+                    "port": 9091
+                  },
+                  "periodSeconds": 2,
+                  "failureThreshold": 60
+                }
+              }
+            ]
+          }
+        },
+        "progressDeadlineSeconds": 180
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "name": "payment-service-simulator"
+      },
+      "spec": {
+        "selector": {
+          "app": "payment-service-simulator"
+        },
+        "ports": [
+          {
+            "port": 8082,
+            "targetPort": 8082
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "policy/v1",
+      "kind": "PodDisruptionBudget",
+      "metadata": {
+        "name": "payment-service-simulator"
+      },
+      "spec": {
+        "minAvailable": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "payment-service-simulator"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "autoscaling/v2",
+      "kind": "HorizontalPodAutoscaler",
+      "metadata": {
+        "name": "payment-service-simulator"
+      },
+      "spec": {
+        "scaleTargetRef": {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "payment-service-simulator"
+        },
+        "minReplicas": 2,
+        "maxReplicas": 6,
+        "metrics": [
+          {
+            "type": "Resource",
+            "resource": {
+              "name": "cpu",
+              "target": {
+                "type": "Utilization",
+                "averageUtilization": 70
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "name": "order-service"
+      },
+      "spec": {
+        "replicas": 2,
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxSurge": 1,
+            "maxUnavailable": 0
+          }
+        },
+        "selector": {
+          "matchLabels": {
+            "app": "order-service"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "order-service"
+            }
+          },
+          "spec": {
+            "terminationGracePeriodSeconds": 20,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "order-service",
+                "image": "resilience/order-service:1.0.0",
+                "imagePullPolicy": "IfNotPresent",
+                "ports": [
+                  {
+                    "containerPort": 8081
+                  },
+                  {
+                    "containerPort": 9091
+                  }
+                ],
+                "envFrom": [
+                  {
+                    "configMapRef": {
+                      "name": "resilience-demo"
+                    }
+                  }
+                ],
+                "env": [
+                  {
+                    "name": "DEMO_TARGET",
+                    "value": "http://payment-service-simulator:8082/quote"
+                  },
+                  {
+                    "name": "RESILIENCE_RETRY_BUDGET_REDIS_URI",
+                    "valueFrom": {
+                      "secretKeyRef": {
+                        "name": "resilience-demo",
+                        "key": "redis-uri"
+                      }
+                    }
+                  }
+                ],
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "resources": {
+                  "requests": {
+                    "cpu": "250m",
+                    "memory": "256Mi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "512Mi"
+                  }
+                },
+                "readinessProbe": {
+                  "httpGet": {
+                    "path": "/actuator/health",
+                    "port": 9091
+                  },
+                  "initialDelaySeconds": 10
+                },
+                "livenessProbe": {
+                  "httpGet": {
+                    "path": "/actuator/health",
+                    "port": 9091
+                  },
+                  "initialDelaySeconds": 30
+                },
+                "startupProbe": {
+                  "httpGet": {
+                    "path": "/actuator/health",
+                    "port": 9091
+                  },
+                  "periodSeconds": 2,
+                  "failureThreshold": 60
+                }
+              }
+            ]
+          }
+        },
+        "progressDeadlineSeconds": 180
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "name": "order-service"
+      },
+      "spec": {
+        "selector": {
+          "app": "order-service"
+        },
+        "ports": [
+          {
+            "port": 8081,
+            "targetPort": 8081
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "policy/v1",
+      "kind": "PodDisruptionBudget",
+      "metadata": {
+        "name": "order-service"
+      },
+      "spec": {
+        "minAvailable": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "order-service"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "autoscaling/v2",
+      "kind": "HorizontalPodAutoscaler",
+      "metadata": {
+        "name": "order-service"
+      },
+      "spec": {
+        "scaleTargetRef": {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "order-service"
+        },
+        "minReplicas": 2,
+        "maxReplicas": 6,
+        "metrics": [
+          {
+            "type": "Resource",
+            "resource": {
+              "name": "cpu",
+              "target": {
+                "type": "Utilization",
+                "averageUtilization": 70
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "name": "demo-client"
+      },
+      "spec": {
+        "replicas": 2,
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxSurge": 1,
+            "maxUnavailable": 0
+          }
+        },
+        "selector": {
+          "matchLabels": {
+            "app": "demo-client"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "demo-client"
+            }
+          },
+          "spec": {
+            "terminationGracePeriodSeconds": 20,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "demo-client",
+                "image": "resilience/demo-client:1.0.0",
+                "imagePullPolicy": "IfNotPresent",
+                "ports": [
+                  {
+                    "containerPort": 8080
+                  },
+                  {
+                    "containerPort": 9091
+                  }
+                ],
+                "envFrom": [
+                  {
+                    "configMapRef": {
+                      "name": "resilience-demo"
+                    }
+                  }
+                ],
+                "env": [
+                  {
+                    "name": "DEMO_TARGET",
+                    "value": "http://order-service:8081/orders/quote"
+                  },
+                  {
+                    "name": "RESILIENCE_RETRY_BUDGET_REDIS_URI",
+                    "valueFrom": {
+                      "secretKeyRef": {
+                        "name": "resilience-demo",
+                        "key": "redis-uri"
+                      }
+                    }
+                  }
+                ],
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "resources": {
+                  "requests": {
+                    "cpu": "250m",
+                    "memory": "256Mi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "512Mi"
+                  }
+                },
+                "readinessProbe": {
+                  "httpGet": {
+                    "path": "/actuator/health",
+                    "port": 9091
+                  },
+                  "initialDelaySeconds": 10
+                },
+                "livenessProbe": {
+                  "httpGet": {
+                    "path": "/actuator/health",
+                    "port": 9091
+                  },
+                  "initialDelaySeconds": 30
+                },
+                "startupProbe": {
+                  "httpGet": {
+                    "path": "/actuator/health",
+                    "port": 9091
+                  },
+                  "periodSeconds": 2,
+                  "failureThreshold": 60
+                }
+              }
+            ]
+          }
+        },
+        "progressDeadlineSeconds": 180
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "name": "demo-client"
+      },
+      "spec": {
+        "selector": {
+          "app": "demo-client"
+        },
+        "ports": [
+          {
+            "port": 8080,
+            "targetPort": 8080
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "policy/v1",
+      "kind": "PodDisruptionBudget",
+      "metadata": {
+        "name": "demo-client"
+      },
+      "spec": {
+        "minAvailable": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "demo-client"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "autoscaling/v2",
+      "kind": "HorizontalPodAutoscaler",
+      "metadata": {
+        "name": "demo-client"
+      },
+      "spec": {
+        "scaleTargetRef": {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "demo-client"
+        },
+        "minReplicas": 2,
+        "maxReplicas": 6,
+        "metrics": [
+          {
+            "type": "Resource",
+            "resource": {
+              "name": "cpu",
+              "target": {
+                "type": "Utilization",
+                "averageUtilization": 70
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "name": "retry-budget"
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "retry-budget"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "retry-budget"
+            }
+          },
+          "spec": {
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 999,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "redis",
+                "image": "redis:7.4.6-alpine",
+                "command": [
+                  "sh",
+                  "-c",
+                  "exec redis-server --requirepass \"$REDISCLI_AUTH\" --save \"\" --appendonly no --maxmemory 64mb --maxmemory-policy noeviction"
+                ],
+                "env": [
+                  {
+                    "name": "REDISCLI_AUTH",
+                    "valueFrom": {
+                      "secretKeyRef": {
+                        "name": "resilience-demo",
+                        "key": "redis-password"
+                      }
+                    }
+                  }
+                ],
+                "ports": [
+                  {
+                    "containerPort": 6379
+                  }
+                ],
+                "resources": {
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "64Mi"
+                  },
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "128Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "readinessProbe": {
+                  "exec": {
+                    "command": [
+                      "redis-cli",
+                      "ping"
+                    ]
+                  },
+                  "periodSeconds": 2
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "name": "retry-budget"
+      },
+      "spec": {
+        "selector": {
+          "app": "retry-budget"
+        },
+        "ports": [
+          {
+            "port": 6379,
+            "targetPort": 6379
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "networking.k8s.io/v1",
+      "kind": "NetworkPolicy",
+      "metadata": {
+        "name": "resilience-isolation"
+      },
+      "spec": {
+        "podSelector": {},
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ],
+        "ingress": [
+          {
+            "from": [
+              {
+                "podSelector": {}
+              }
+            ]
+          }
+        ],
+        "egress": [
+          {
+            "to": [
+              {
+                "podSelector": {}
+              }
+            ]
+          },
+          {
+            "to": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "kube-system"
+                  }
+                }
+              }
+            ],
+            "ports": [
+              {
+                "protocol": "UDP",
+                "port": 53
+              },
+              {
+                "protocol": "TCP",
+                "port": 53
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

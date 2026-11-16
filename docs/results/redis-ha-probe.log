@@ -1,0 +1,21 @@
+13:39:44.653 [main] INFO redis.clients.jedis.JedisSentinelPool -- Trying to find master from available Sentinels...
+13:39:44.740 [main] INFO redis.clients.jedis.JedisSentinelPool -- Redis master running at 192.168.165.2:6379, starting Sentinel listeners...
+13:39:44.743 [MasterListener-resilience-[s2:26379]] INFO redis.clients.jedis.JedisSentinelPool -- Created JedisSentinelPool to master at 192.168.165.2:6379
+PHASE replicated-ready
+13:39:47.247 [MasterListener-resilience-[s3:26379]] INFO redis.clients.jedis.JedisSentinelPool -- Created JedisSentinelPool to master at 192.168.165.4:6379
+PHASE preserved-done
+13:39:47.908 [main] INFO redis.clients.jedis.JedisSentinelPool -- Trying to find master from available Sentinels...
+13:39:47.910 [main] INFO redis.clients.jedis.JedisSentinelPool -- Redis master running at 192.168.165.4:6379, starting Sentinel listeners...
+13:39:47.914 [MasterListener-resilience-[s2:26379]] INFO redis.clients.jedis.JedisSentinelPool -- Created JedisSentinelPool to master at 192.168.165.4:6379
+PHASE unreplicated-written
+13:39:50.460 [MasterListener-resilience-[s2:26379]] INFO redis.clients.jedis.JedisSentinelPool -- Created JedisSentinelPool to master at 192.168.165.3:6379
+13:39:50.460 [MasterListener-resilience-[s2:26379]] INFO redis.clients.jedis.JedisSentinelPool -- Created JedisSentinelPool to master at 192.168.165.3:6379
+PHASE loss-observed
+13:39:56.724 [main] INFO redis.clients.jedis.JedisSentinelPool -- Trying to find master from available Sentinels...
+13:39:56.730 [main] INFO redis.clients.jedis.JedisSentinelPool -- Redis master running at 192.168.165.3:6379, starting Sentinel listeners...
+13:39:56.732 [main] INFO redis.clients.jedis.JedisSentinelPool -- Created JedisSentinelPool to master at 192.168.165.3:6379
+PHASE quorum-ready
+PHASE quorum-loss-observed
+13:40:51.340 [MasterListener-resilience-[s1:26379]] INFO redis.clients.jedis.JedisSentinelPool -- Created JedisSentinelPool to master at 192.168.165.2:6379
+13:40:51.340 [MasterListener-resilience-[s1:26379]] INFO redis.clients.jedis.JedisSentinelPool -- Created JedisSentinelPool to master at 192.168.165.2:6379
+PHASE done

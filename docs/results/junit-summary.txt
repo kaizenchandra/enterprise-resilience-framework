@@ -1,0 +1,15 @@
+dev.resilience.ConnectionPoolChaosTest: tests=1, failures=0, errors=0, skipped=0
+dev.resilience.HttpIntegrationTest: tests=6, failures=0, errors=0, skipped=0
+dev.resilience.HttpPropagationTest: tests=1, failures=0, errors=0, skipped=0
+dev.resilience.RedisBudgetIntegrationTest: tests=6, failures=0, errors=0, skipped=0
+dev.resilience.ReliabilitySoakTest: tests=1, failures=0, errors=0, skipped=0
+dev.resilience.TransportChaosTest: tests=6, failures=0, errors=0, skipped=0
+dev.resilience.BulkheadTest: tests=2, failures=0, errors=0, skipped=0
+dev.resilience.CircuitBreakerTest: tests=8, failures=0, errors=0, skipped=0
+dev.resilience.ExecutorTest: tests=10, failures=0, errors=0, skipped=0
+dev.resilience.PropagationAndBudgetTest: tests=7, failures=0, errors=0, skipped=0
+dev.resilience.RetryBudgetTest: tests=3, failures=0, errors=0, skipped=0
+dev.resilience.RetryPolicyTest: tests=3, failures=0, errors=0, skipped=0
+dev.resilience.ContextPropagationTest: tests=3, failures=0, errors=0, skipped=0
+dev.resilience.StarterTest: tests=4, failures=0, errors=0, skipped=0
+dev.resilience.TimeLimiterContextTest: tests=1, failures=0, errors=0, skipped=0

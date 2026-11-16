@@ -1,0 +1,32 @@
+{
+  "topology": "one primary, two replicas, three authenticated Sentinels; all on one host",
+  "started": 1794749972.8289468,
+  "replicatedFailover": {
+    "postFailoverGrants": 3,
+    "firstRecoveredMillis": 2210,
+    "unavailableDecisions": 22
+  },
+  "unreplicatedFailover": {
+    "postFailoverGrants": 10,
+    "firstRecoveredMillis": 2104,
+    "unavailableDecisions": 21
+  },
+  "strictDurability": "FAIL: ten acknowledged unreplicated reservations were restored after promotion",
+  "quorumLoss": {
+    "unavailableDecisions": 49,
+    "grants": 0
+  },
+  "quorumRecovery": {
+    "postFailoverGrants": 7,
+    "firstRecoveredMillis": 47027,
+    "unavailableDecisions": 457
+  },
+  "functionalResult": "PASS",
+  "elapsedSeconds": 82.2065999507904,
+  "cleanup": "owned containers and network removed",
+  "recoveryObservationWindowSeconds": 75,
+  "earlierQuorumRecoveryObservationSeconds": 40,
+  "quorumRecoveryWithin40Seconds": false,
+  "strictDurableBudget": "FAIL",
+  "sentinelTiltObserved": true
+}

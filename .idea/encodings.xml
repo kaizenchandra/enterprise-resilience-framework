@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/examples/demo-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/order-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/examples/payment-service-simulator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-tests/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resilience-benchmarks/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resilience-bulkhead/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resilience-circuitbreaker/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resilience-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resilience-executor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resilience-micrometer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resilience-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resilience-retry/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resilience-spring-boot-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resilience-timelimiter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

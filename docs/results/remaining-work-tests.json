@@ -1,0 +1,133 @@
+{
+  "jdk": "Oracle 21.0.13.0.3",
+  "maven": "3.10.0",
+  "profiles": [
+    "external",
+    "soak"
+  ],
+  "soakSeconds": 60,
+  "suites": [
+    {
+      "name": "dev.resilience.ConnectionPoolChaosTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.299"
+    },
+    {
+      "name": "dev.resilience.HttpIntegrationTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.597"
+    },
+    {
+      "name": "dev.resilience.HttpPropagationTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.542"
+    },
+    {
+      "name": "dev.resilience.RedisBudgetIntegrationTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.937"
+    },
+    {
+      "name": "dev.resilience.ReliabilitySoakTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "60.024"
+    },
+    {
+      "name": "dev.resilience.TransportChaosTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.075"
+    },
+    {
+      "name": "dev.resilience.BulkheadTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.051"
+    },
+    {
+      "name": "dev.resilience.CircuitBreakerTest",
+      "tests": "8",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.07"
+    },
+    {
+      "name": "dev.resilience.ExecutorTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.213"
+    },
+    {
+      "name": "dev.resilience.PropagationAndBudgetTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.164"
+    },
+    {
+      "name": "dev.resilience.RetryBudgetTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.061"
+    },
+    {
+      "name": "dev.resilience.RetryPolicyTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.008"
+    },
+    {
+      "name": "dev.resilience.ContextPropagationTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.031"
+    },
+    {
+      "name": "dev.resilience.StarterTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.633"
+    },
+    {
+      "name": "dev.resilience.TimeLimiterContextTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "0.03"
+    }
+  ],
+  "total": 62,
+  "soakOutput": "SOAK seconds=60 operations=226630 downstream=151364 expectedFailures=99380 cancelled=7489 maxPhysicalConcurrency=4\n"
+}

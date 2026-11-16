@@ -1,0 +1,1 @@
+PASS: authenticated Redis/shared budget, Compose chain, admin denial, failure/open/shedding, recovery, Prometheus

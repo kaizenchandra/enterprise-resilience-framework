@@ -1,0 +1,57 @@
+{
+  "context": "orbstack",
+  "namespace": "resilience-cni-1794749161",
+  "checks": {
+    "baseline-allowed-pod": true,
+    "baseline-allowed-service": true,
+    "baseline-blocked-pod": true,
+    "baseline-blocked-service": true,
+    "baseline-outsider-pod": true,
+    "baseline-outsider-service": true,
+    "ingress-allowed-pod": true,
+    "ingress-allowed-service": true,
+    "ingress-blocked-pod": true,
+    "ingress-blocked-service": true,
+    "ingress-outsider-pod": true,
+    "ingress-outsider-service": true,
+    "egress-denied-pod": true,
+    "egress-denied-service": true,
+    "post-deny-positive-control": true
+  },
+  "started": 1794749161.1252759,
+  "observedConnections": {
+    "allowed-pod": [
+      true,
+      true,
+      true
+    ],
+    "allowed-service": [
+      true,
+      true,
+      true
+    ],
+    "blocked-pod": [
+      false,
+      false,
+      false
+    ],
+    "blocked-service": [
+      false,
+      false,
+      false
+    ],
+    "outsider-pod": [
+      false,
+      false,
+      false
+    ],
+    "outsider-service": [
+      false,
+      false,
+      false
+    ]
+  },
+  "result": "PASS",
+  "cleanup": "owned namespaces deletion requested",
+  "elapsedSeconds": 57.377002000808716
+}

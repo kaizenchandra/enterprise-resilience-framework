@@ -1,0 +1,27 @@
+server:
+  port: 8082
+  shutdown: graceful
+spring:
+  threads:
+    virtual:
+      enabled: true
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,resilience
+resilience:
+  workers: 100
+  async-calls: 100
+  instances:
+    "[payment-service.quote]":
+      minimum-calls: 10
+      open-duration: 5s
+    "[order-service.quote]":
+      max-attempts: 1
+      minimum-calls: 10
+      open-duration: 5s
+demo:
+  admin-token: ${DEMO_ADMIN_TOKEN}

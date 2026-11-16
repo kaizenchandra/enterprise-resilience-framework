@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="resilience-retry" />
+        <module name="resilience-benchmarks" />
+        <module name="integration-tests" />
+        <module name="resilience-core" />
+        <module name="resilience-timelimiter" />
+        <module name="resilience-bulkhead" />
+        <module name="resilience-micrometer" />
+        <module name="resilience-redis" />
+        <module name="demo-client" />
+        <module name="payment-service-simulator" />
+        <module name="resilience-executor" />
+        <module name="order-service" />
+        <module name="resilience-circuitbreaker" />
+        <module name="resilience-spring-boot-starter" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo-client" options="-parameters" />
+      <module name="integration-tests" options="-parameters" />
+      <module name="order-service" options="-parameters" />
+      <module name="payment-service-simulator" options="-parameters" />
+      <module name="resilience-benchmarks" options="-parameters" />
+      <module name="resilience-bulkhead" options="-parameters" />
+      <module name="resilience-circuitbreaker" options="-parameters" />
+      <module name="resilience-core" options="-parameters" />
+      <module name="resilience-executor" options="-parameters" />
+      <module name="resilience-micrometer" options="-parameters" />
+      <module name="resilience-redis" options="-parameters" />
+      <module name="resilience-retry" options="-parameters" />
+      <module name="resilience-spring-boot-starter" options="-parameters" />
+      <module name="resilience-timelimiter" options="-parameters" />
+    </option>
+  </component>
+</project>

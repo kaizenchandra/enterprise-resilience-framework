@@ -1,0 +1,86 @@
+{
+  "groups": [
+    {
+      "name": "resilience",
+      "rules": [
+        {
+          "alert": "CircuitOpen",
+          "expr": "resilience_circuit_state == 1",
+          "for": "2m",
+          "labels": {
+            "severity": "warning"
+          },
+          "annotations": {
+            "summary": "CircuitOpen for {{ $labels.policy }}"
+          }
+        },
+        {
+          "alert": "RetryAmplification",
+          "expr": "sum by(policy) (rate(resilience_retry_total[5m])) / clamp_min(sum by(policy) (rate(resilience_success_total[5m])), 1) > 1",
+          "for": "5m",
+          "labels": {
+            "severity": "warning"
+          },
+          "annotations": {
+            "summary": "RetryAmplification for {{ $labels.policy }}"
+          }
+        },
+        {
+          "alert": "BulkheadSaturated",
+          "expr": "resilience_bulkhead_available == 0",
+          "for": "1m",
+          "labels": {
+            "severity": "warning"
+          },
+          "annotations": {
+            "summary": "BulkheadSaturated for {{ $labels.policy }}"
+          }
+        },
+        {
+          "alert": "TimeoutRate",
+          "expr": "rate(resilience_timeout_total[5m]) > 5",
+          "for": "2m",
+          "labels": {
+            "severity": "warning"
+          },
+          "annotations": {
+            "summary": "TimeoutRate for {{ $labels.policy }}"
+          }
+        },
+        {
+          "alert": "FallbackOveruse",
+          "expr": "rate(resilience_fallback_total[5m]) > 1",
+          "for": "5m",
+          "labels": {
+            "severity": "warning"
+          },
+          "annotations": {
+            "summary": "FallbackOveruse for {{ $labels.policy }}"
+          }
+        },
+        {
+          "alert": "RecoverySlow",
+          "expr": "resilience_circuit_state == 2",
+          "for": "2m",
+          "labels": {
+            "severity": "warning"
+          },
+          "annotations": {
+            "summary": "RecoverySlow for {{ $labels.policy }}"
+          }
+        },
+        {
+          "alert": "RetryBudgetUnavailable",
+          "expr": "sum by(policy) (rate(resilience_budget_unavailable_total[5m])) > 1",
+          "for": "2m",
+          "labels": {
+            "severity": "warning"
+          },
+          "annotations": {
+            "summary": "Retry budget unavailable for {{ $labels.policy }}"
+          }
+        }
+      ]
+    }
+  ]
+}

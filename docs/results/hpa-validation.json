@@ -1,0 +1,2775 @@
+{
+  "namespace": "resilience-hpa-1794750921",
+  "context": "orbstack",
+  "timeline": [
+    {
+      "elapsedSeconds": 50.4,
+      "desired": 0,
+      "current": null,
+      "ready": 1,
+      "deploymentReplicas": 1,
+      "metrics": null,
+      "conditions": []
+    },
+    {
+      "elapsedSeconds": 54.5,
+      "desired": 0,
+      "current": null,
+      "ready": 1,
+      "deploymentReplicas": 1,
+      "metrics": null,
+      "conditions": []
+    },
+    {
+      "elapsedSeconds": 62.2,
+      "desired": 0,
+      "current": null,
+      "ready": 1,
+      "deploymentReplicas": 1,
+      "metrics": null,
+      "conditions": []
+    },
+    {
+      "elapsedSeconds": 73.4,
+      "desired": 2,
+      "current": 1,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 61,
+              "averageValue": "61m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to update the target scale to 2",
+          "reason": "SucceededRescale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+          "reason": "ValidMetricFound",
+          "status": "True",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 80.5,
+      "desired": 2,
+      "current": 1,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 61,
+              "averageValue": "61m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to update the target scale to 2",
+          "reason": "SucceededRescale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+          "reason": "ValidMetricFound",
+          "status": "True",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 86.9,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:45Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 95.2,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:45Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 101.7,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:45Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 110.0,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:45Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 116.3,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:45Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 121.9,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:45Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 127.6,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:45Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 133.4,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:45Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 139.0,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:45Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 144.5,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:45Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 150.0,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 37,
+              "averageValue": "37m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "recommended size matches current size",
+          "reason": "ReadyForNewScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:57:48Z",
+          "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+          "reason": "ValidMetricFound",
+          "status": "True",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 155.3,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 37,
+              "averageValue": "37m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "recommended size matches current size",
+          "reason": "ReadyForNewScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:57:48Z",
+          "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+          "reason": "ValidMetricFound",
+          "status": "True",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 160.9,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 37,
+              "averageValue": "37m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "recommended size matches current size",
+          "reason": "ReadyForNewScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:57:48Z",
+          "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+          "reason": "ValidMetricFound",
+          "status": "True",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 166.2,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 37,
+              "averageValue": "37m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "recommended size matches current size",
+          "reason": "ReadyForNewScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:57:48Z",
+          "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+          "reason": "ValidMetricFound",
+          "status": "True",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 172.1,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 37,
+              "averageValue": "37m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "recommended size matches current size",
+          "reason": "ReadyForNewScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:57:48Z",
+          "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+          "reason": "ValidMetricFound",
+          "status": "True",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 178.1,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 37,
+              "averageValue": "37m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "recommended size matches current size",
+          "reason": "ReadyForNewScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:57:48Z",
+          "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+          "reason": "ValidMetricFound",
+          "status": "True",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 184.0,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:58:19Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 190.2,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:58:19Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 196.7,
+      "desired": 2,
+      "current": 2,
+      "ready": 1,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:58:19Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 202.6,
+      "desired": 2,
+      "current": 2,
+      "ready": 2,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:58:19Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 208.3,
+      "desired": 2,
+      "current": 2,
+      "ready": 2,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:58:19Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 214.8,
+      "desired": 2,
+      "current": 2,
+      "ready": 2,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:58:19Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 223.7,
+      "desired": 2,
+      "current": 2,
+      "ready": 2,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:58:19Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 230.6,
+      "desired": 2,
+      "current": 2,
+      "ready": 2,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:58:19Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    },
+    {
+      "elapsedSeconds": 236.7,
+      "desired": 2,
+      "current": 2,
+      "ready": 2,
+      "deploymentReplicas": 2,
+      "metrics": [
+        {
+          "type": ""
+        }
+      ],
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the HPA controller was able to get the target's current scale",
+          "reason": "SucceededGetScale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:58:19Z",
+          "message": "the HPA was unable to compute the replica count: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+          "reason": "FailedGetResourceMetric",
+          "status": "False",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-15T13:56:28Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ]
+    }
+  ],
+  "started": 1794750921.3361752,
+  "idleCpuMillicores": [
+    951.380882,
+    951.380882,
+    951.380882,
+    38.841099,
+    38.841099,
+    38.841099
+  ],
+  "loadStarted": 1794750974.159507,
+  "result": "FAIL",
+  "error": "Load job failed",
+  "events": {
+    "apiVersion": "v1",
+    "items": [
+      {
+        "action": "Binding",
+        "apiVersion": "v1",
+        "eventTime": "2026-11-15T13:55:21.992013Z",
+        "firstTimestamp": null,
+        "involvedObject": {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "name": "demo-client-5d6cbbd6b4-6g5kk",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81720",
+          "uid": "6f5db9ca-7b37-472e-b489-73a4b8e9a18c"
+        },
+        "kind": "Event",
+        "lastTimestamp": null,
+        "message": "Successfully assigned resilience-hpa-1794750921/demo-client-5d6cbbd6b4-6g5kk to orbstack",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "demo-client-5d6cbbd6b4-6g5kk.18e83c745da3900a",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81730",
+          "uid": "3d731dfe-7afb-4888-bc1f-0aea6ef5f101"
+        },
+        "reason": "Scheduled",
+        "reportingComponent": "default-scheduler",
+        "reportingInstance": "default-scheduler-orbstack",
+        "source": {},
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:23Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{demo-client}",
+          "kind": "Pod",
+          "name": "demo-client-5d6cbbd6b4-6g5kk",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81723",
+          "uid": "6f5db9ca-7b37-472e-b489-73a4b8e9a18c"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:23Z",
+        "message": "Container image \"resilience/demo-client:validation-v2\" already present on machine and can be accessed by the pod",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:23Z",
+          "name": "demo-client-5d6cbbd6b4-6g5kk.18e83c74d0fa5ab0",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81757",
+          "uid": "cf6f547e-418a-43c8-94f2-56d0c31fcf56"
+        },
+        "reason": "Pulled",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:24Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{demo-client}",
+          "kind": "Pod",
+          "name": "demo-client-5d6cbbd6b4-6g5kk",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81723",
+          "uid": "6f5db9ca-7b37-472e-b489-73a4b8e9a18c"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:24Z",
+        "message": "Container created",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:24Z",
+          "name": "demo-client-5d6cbbd6b4-6g5kk.18e83c74eb4a68ca",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81761",
+          "uid": "421595d4-7516-45a8-a0a5-bf7d959e638e"
+        },
+        "reason": "Created",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:24Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{demo-client}",
+          "kind": "Pod",
+          "name": "demo-client-5d6cbbd6b4-6g5kk",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81723",
+          "uid": "6f5db9ca-7b37-472e-b489-73a4b8e9a18c"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:24Z",
+        "message": "Container started",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:24Z",
+          "name": "demo-client-5d6cbbd6b4-6g5kk.18e83c75076d660e",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81763",
+          "uid": "760a7bb5-50d8-4b5e-a367-3c073647bf4f"
+        },
+        "reason": "Started",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 8,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:26Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{demo-client}",
+          "kind": "Pod",
+          "name": "demo-client-5d6cbbd6b4-6g5kk",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81723",
+          "uid": "6f5db9ca-7b37-472e-b489-73a4b8e9a18c"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:40Z",
+        "message": "Startup probe failed: Get \"http://192.168.194.112:9091/actuator/health\": dial tcp 192.168.194.112:9091: connect: connection refused",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:26Z",
+          "name": "demo-client-5d6cbbd6b4-6g5kk.18e83c755f52feb3",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81815",
+          "uid": "97c5dc40-4521-4f5e-a2b3-c1d032bbc21f"
+        },
+        "reason": "Unhealthy",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 2,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:56:33Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{demo-client}",
+          "kind": "Pod",
+          "name": "demo-client-5d6cbbd6b4-6g5kk",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81723",
+          "uid": "6f5db9ca-7b37-472e-b489-73a4b8e9a18c"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:59:03Z",
+        "message": "Liveness probe failed: Get \"http://192.168.194.112:9091/actuator/health\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:56:34Z",
+          "name": "demo-client-5d6cbbd6b4-6g5kk.18e83c84fafc4500",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82107",
+          "uid": "34ea12e9-28aa-4f56-b34c-8ec2b7852c45"
+        },
+        "reason": "Unhealthy",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:21Z",
+        "involvedObject": {
+          "apiVersion": "apps/v1",
+          "kind": "ReplicaSet",
+          "name": "demo-client-5d6cbbd6b4",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81693",
+          "uid": "2cb488bf-862b-4619-b1b7-feb479b1b32a"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:21Z",
+        "message": "Created pod: demo-client-5d6cbbd6b4-6g5kk",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "demo-client-5d6cbbd6b4.18e83c745d020f08",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81722",
+          "uid": "fa3b8828-c4ff-43af-ab19-98e8cca75a82"
+        },
+        "reason": "SuccessfulCreate",
+        "reportingComponent": "replicaset-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "replicaset-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:21Z",
+        "involvedObject": {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "demo-client",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81691",
+          "uid": "d65be8bc-42da-43e7-b125-40b80bb3b68d"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:21Z",
+        "message": "Scaled up replica set demo-client-5d6cbbd6b4 from 0 to 1",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "demo-client.18e83c74598125fe",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81695",
+          "uid": "6873f38b-abf8-4e2c-b72b-1b8597dd6191"
+        },
+        "reason": "ScalingReplicaSet",
+        "reportingComponent": "deployment-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "deployment-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 2,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:21Z",
+        "involvedObject": {
+          "apiVersion": "policy/v1",
+          "kind": "PodDisruptionBudget",
+          "name": "demo-client",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81702",
+          "uid": "c5b0edf1-8077-4427-bb42-50a46bc7e798"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:21Z",
+        "message": "No matching pods found",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "demo-client.18e83c745adf802f",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81709",
+          "uid": "c883f0ee-5646-4fd0-8d7a-d9d7ed494fc4"
+        },
+        "reason": "NoPods",
+        "reportingComponent": "controllermanager",
+        "reportingInstance": "",
+        "source": {
+          "component": "controllermanager"
+        },
+        "type": "Normal"
+      },
+      {
+        "action": "Binding",
+        "apiVersion": "v1",
+        "eventTime": "2026-11-15T13:56:18.190438Z",
+        "firstTimestamp": null,
+        "involvedObject": {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "name": "hpa-load-nf2p8",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81856",
+          "uid": "13ea1a2e-9d7b-415d-b7ed-4e4fad9c9623"
+        },
+        "kind": "Event",
+        "lastTimestamp": null,
+        "message": "Successfully assigned resilience-hpa-1794750921/hpa-load-nf2p8 to orbstack",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:56:18Z",
+          "name": "hpa-load-nf2p8.18e83c8173541f02",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81861",
+          "uid": "d751ee5e-c46a-4ebe-a7a0-47980ccf5a89"
+        },
+        "reason": "Scheduled",
+        "reportingComponent": "default-scheduler",
+        "reportingInstance": "default-scheduler-orbstack",
+        "source": {},
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:57:40Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{k6}",
+          "kind": "Pod",
+          "name": "hpa-load-nf2p8",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81860",
+          "uid": "13ea1a2e-9d7b-415d-b7ed-4e4fad9c9623"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:57:40Z",
+        "message": "Container image \"grafana/k6:latest\" already present on machine and can be accessed by the pod",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:57:40Z",
+          "name": "hpa-load-nf2p8.18e83c94ab624269",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81974",
+          "uid": "3bbb4089-85ac-4fb2-abf0-6c549f4cf698"
+        },
+        "reason": "Pulled",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:57:44Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{k6}",
+          "kind": "Pod",
+          "name": "hpa-load-nf2p8",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81860",
+          "uid": "13ea1a2e-9d7b-415d-b7ed-4e4fad9c9623"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:57:44Z",
+        "message": "Container created",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:57:44Z",
+          "name": "hpa-load-nf2p8.18e83c9585627054",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81977",
+          "uid": "6f4bfa54-5dcf-4db0-b754-26879ecbb953"
+        },
+        "reason": "Created",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:57:44Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{k6}",
+          "kind": "Pod",
+          "name": "hpa-load-nf2p8",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81860",
+          "uid": "13ea1a2e-9d7b-415d-b7ed-4e4fad9c9623"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:57:44Z",
+        "message": "Container started",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:57:44Z",
+          "name": "hpa-load-nf2p8.18e83c958f94c757",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81980",
+          "uid": "70427ef6-b00f-4379-849b-0f835ca540c9"
+        },
+        "reason": "Started",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:56:16Z",
+        "involvedObject": {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "hpa-load",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81853",
+          "uid": "4f67cd67-6705-4600-af01-7eb08276078a"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:56:16Z",
+        "message": "Created pod: hpa-load-nf2p8",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:56:16Z",
+          "name": "hpa-load.18e83c81148a4e2d",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81857",
+          "uid": "e994b68b-d3dc-4828-a4e3-cd401cc7cb43"
+        },
+        "reason": "SuccessfulCreate",
+        "reportingComponent": "job-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "job-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:59:14Z",
+        "involvedObject": {
+          "apiVersion": "batch/v1",
+          "kind": "Job",
+          "name": "hpa-load",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81983",
+          "uid": "4f67cd67-6705-4600-af01-7eb08276078a"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:59:14Z",
+        "message": "Deleted pod: hpa-load-nf2p8",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:59:15Z",
+          "name": "hpa-load.18e83caa9b235c1c",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82118",
+          "uid": "54ec44c3-39f5-4872-9146-595bcb14b516"
+        },
+        "reason": "SuccessfulDelete",
+        "reportingComponent": "job-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "job-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "action": "Binding",
+        "apiVersion": "v1",
+        "eventTime": "2026-11-15T13:56:30.379005Z",
+        "firstTimestamp": null,
+        "involvedObject": {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-4qfrc",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81884",
+          "uid": "26cc7bb0-a684-41a6-8440-557c3fe9f8b7"
+        },
+        "kind": "Event",
+        "lastTimestamp": null,
+        "message": "Successfully assigned resilience-hpa-1794750921/order-service-7c5d7887cd-4qfrc to orbstack",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:56:31Z",
+          "name": "order-service-7c5d7887cd-4qfrc.18e83c8449d27bbc",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81892",
+          "uid": "c105e3f7-fa65-4f67-952f-18521bcc50d9"
+        },
+        "reason": "Scheduled",
+        "reportingComponent": "default-scheduler",
+        "reportingInstance": "default-scheduler-orbstack",
+        "source": {},
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:57:40Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{order-service}",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-4qfrc",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81887",
+          "uid": "26cc7bb0-a684-41a6-8440-557c3fe9f8b7"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:57:40Z",
+        "message": "Container image \"resilience/order-service:validation-v2\" already present on machine and can be accessed by the pod",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:57:40Z",
+          "name": "order-service-7c5d7887cd-4qfrc.18e83c94b5bb312f",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81976",
+          "uid": "5bc9b15e-2b37-4978-b8df-06255742fbea"
+        },
+        "reason": "Pulled",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:57:44Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{order-service}",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-4qfrc",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81887",
+          "uid": "26cc7bb0-a684-41a6-8440-557c3fe9f8b7"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:57:44Z",
+        "message": "Container created",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:57:44Z",
+          "name": "order-service-7c5d7887cd-4qfrc.18e83c95863f311b",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81978",
+          "uid": "3be7bfee-ba5c-4402-9f3e-8517115ad0c0"
+        },
+        "reason": "Created",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:57:44Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{order-service}",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-4qfrc",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81887",
+          "uid": "26cc7bb0-a684-41a6-8440-557c3fe9f8b7"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:57:44Z",
+        "message": "Container started",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:57:44Z",
+          "name": "order-service-7c5d7887cd-4qfrc.18e83c9590447213",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81981",
+          "uid": "fde64df0-0d61-4fe5-b9fe-0c04730d3d38"
+        },
+        "reason": "Started",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 23,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:57:48Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{order-service}",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-4qfrc",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81887",
+          "uid": "26cc7bb0-a684-41a6-8440-557c3fe9f8b7"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:58:32Z",
+        "message": "Startup probe failed: Get \"http://192.168.194.115:9091/actuator/health\": dial tcp 192.168.194.115:9091: connect: connection refused",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:57:48Z",
+          "name": "order-service-7c5d7887cd-4qfrc.18e83c9692443f21",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82060",
+          "uid": "cab8c7b6-9db3-4d39-b3ec-e487372c86df"
+        },
+        "reason": "Unhealthy",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 2,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:58:35Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{order-service}",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-4qfrc",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81887",
+          "uid": "26cc7bb0-a684-41a6-8440-557c3fe9f8b7"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:58:37Z",
+        "message": "Startup probe failed: Get \"http://192.168.194.115:9091/actuator/health\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:58:35Z",
+          "name": "order-service-7c5d7887cd-4qfrc.18e83ca1862b325e",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82069",
+          "uid": "cf736e1c-02b1-4cb2-9bd5-b0e4eb50bd20"
+        },
+        "reason": "Unhealthy",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Warning"
+      },
+      {
+        "action": "Binding",
+        "apiVersion": "v1",
+        "eventTime": "2026-11-15T13:55:21.970137Z",
+        "firstTimestamp": null,
+        "involvedObject": {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-ds5z6",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81707",
+          "uid": "f10dd00c-6297-4135-8dd4-99e32876c371"
+        },
+        "kind": "Event",
+        "lastTimestamp": null,
+        "message": "Successfully assigned resilience-hpa-1794750921/order-service-7c5d7887cd-ds5z6 to orbstack",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "order-service-7c5d7887cd-ds5z6.18e83c745c55d082",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81715",
+          "uid": "f36a7692-d8e6-43dd-bb61-901bb97b40cf"
+        },
+        "reason": "Scheduled",
+        "reportingComponent": "default-scheduler",
+        "reportingInstance": "default-scheduler-orbstack",
+        "source": {},
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:23Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{order-service}",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-ds5z6",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81712",
+          "uid": "f10dd00c-6297-4135-8dd4-99e32876c371"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:23Z",
+        "message": "Container image \"resilience/order-service:validation-v2\" already present on machine and can be accessed by the pod",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:23Z",
+          "name": "order-service-7c5d7887cd-ds5z6.18e83c74cc722406",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81755",
+          "uid": "60be2081-f319-49cb-9615-fee0412b4b03"
+        },
+        "reason": "Pulled",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:24Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{order-service}",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-ds5z6",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81712",
+          "uid": "f10dd00c-6297-4135-8dd4-99e32876c371"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:24Z",
+        "message": "Container created",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:24Z",
+          "name": "order-service-7c5d7887cd-ds5z6.18e83c74e9f6116e",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81760",
+          "uid": "604180f4-a37f-4efb-ac3f-bc3200573c39"
+        },
+        "reason": "Created",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:24Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{order-service}",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-ds5z6",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81712",
+          "uid": "f10dd00c-6297-4135-8dd4-99e32876c371"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:24Z",
+        "message": "Container started",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:24Z",
+          "name": "order-service-7c5d7887cd-ds5z6.18e83c7507cba8d2",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81764",
+          "uid": "bfcbf4bf-4f5d-4119-a43a-2c979b6a8989"
+        },
+        "reason": "Started",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 8,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:26Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{order-service}",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-ds5z6",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81712",
+          "uid": "f10dd00c-6297-4135-8dd4-99e32876c371"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:40Z",
+        "message": "Startup probe failed: Get \"http://192.168.194.110:9091/actuator/health\": dial tcp 192.168.194.110:9091: connect: connection refused",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:26Z",
+          "name": "order-service-7c5d7887cd-ds5z6.18e83c755d8a67a8",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81814",
+          "uid": "586af374-c959-4d06-918d-27791940655b"
+        },
+        "reason": "Unhealthy",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 2,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:57:53Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{order-service}",
+          "kind": "Pod",
+          "name": "order-service-7c5d7887cd-ds5z6",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81712",
+          "uid": "f10dd00c-6297-4135-8dd4-99e32876c371"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:59:03Z",
+        "message": "Liveness probe failed: Get \"http://192.168.194.110:9091/actuator/health\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:57:53Z",
+          "name": "order-service-7c5d7887cd-ds5z6.18e83c9799bdc708",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82108",
+          "uid": "1363a09d-9cc0-4030-ad4a-56b4cc722536"
+        },
+        "reason": "Unhealthy",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:21Z",
+        "involvedObject": {
+          "apiVersion": "apps/v1",
+          "kind": "ReplicaSet",
+          "name": "order-service-7c5d7887cd",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81679",
+          "uid": "236c3a8f-3218-4032-b2c6-515c4dbe520c"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:21Z",
+        "message": "Created pod: order-service-7c5d7887cd-ds5z6",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "order-service-7c5d7887cd.18e83c745ba72b13",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81714",
+          "uid": "7693f57a-11f7-4308-a1cb-176ec6552802"
+        },
+        "reason": "SuccessfulCreate",
+        "reportingComponent": "replicaset-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "replicaset-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:56:29Z",
+        "involvedObject": {
+          "apiVersion": "apps/v1",
+          "kind": "ReplicaSet",
+          "name": "order-service-7c5d7887cd",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81880",
+          "uid": "236c3a8f-3218-4032-b2c6-515c4dbe520c"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:56:29Z",
+        "message": "Created pod: order-service-7c5d7887cd-4qfrc",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:56:29Z",
+          "name": "order-service-7c5d7887cd.18e83c84188a363a",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81885",
+          "uid": "afbf819f-c29c-471e-9e13-6f77e964bbca"
+        },
+        "reason": "SuccessfulCreate",
+        "reportingComponent": "replicaset-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "replicaset-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:21Z",
+        "involvedObject": {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "order-service",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81676",
+          "uid": "401461a1-044b-4bca-89ad-9b0355fa7868"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:21Z",
+        "message": "Scaled up replica set order-service-7c5d7887cd from 0 to 1",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "order-service.18e83c74579d23b9",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81682",
+          "uid": "2ec052dc-4ff3-42ce-9c42-750dc2ae0220"
+        },
+        "reason": "ScalingReplicaSet",
+        "reportingComponent": "deployment-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "deployment-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 2,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:21Z",
+        "involvedObject": {
+          "apiVersion": "policy/v1",
+          "kind": "PodDisruptionBudget",
+          "name": "order-service",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81686",
+          "uid": "115201c5-73c4-4765-9d03-5f6e973cfc28"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:21Z",
+        "message": "No matching pods found",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "order-service.18e83c74584f2295",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81689",
+          "uid": "9b9c3f9b-94e3-4ce7-abf0-ad5d0b9ca29a"
+        },
+        "reason": "NoPods",
+        "reportingComponent": "controllermanager",
+        "reportingInstance": "",
+        "source": {
+          "component": "controllermanager"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:56:29Z",
+        "involvedObject": {
+          "apiVersion": "autoscaling/v2",
+          "kind": "HorizontalPodAutoscaler",
+          "name": "order-service",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81848",
+          "uid": "a8b91881-5741-42ff-b9f2-d9b3158df74f"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:56:29Z",
+        "message": "New size: 2; reason: cpu resource utilization (percentage of request) above target",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:56:29Z",
+          "name": "order-service.18e83c8402e64150",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81879",
+          "uid": "520ad06e-5a5a-4cde-af02-cc9af372861e"
+        },
+        "reason": "SuccessfulRescale",
+        "reportingComponent": "horizontal-pod-autoscaler",
+        "reportingInstance": "",
+        "source": {
+          "component": "horizontal-pod-autoscaler"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:56:29Z",
+        "involvedObject": {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "order-service",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81878",
+          "uid": "401461a1-044b-4bca-89ad-9b0355fa7868"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:56:29Z",
+        "message": "Scaled up replica set order-service-7c5d7887cd from 1 to 2",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:56:29Z",
+          "name": "order-service.18e83c840f54aaa9",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81883",
+          "uid": "7ab3f83f-37c0-4f0b-a34d-f9f3f4ba530c"
+        },
+        "reason": "ScalingReplicaSet",
+        "reportingComponent": "deployment-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "deployment-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 3,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:56:45Z",
+        "involvedObject": {
+          "apiVersion": "autoscaling/v2",
+          "kind": "HorizontalPodAutoscaler",
+          "name": "order-service",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81881",
+          "uid": "a8b91881-5741-42ff-b9f2-d9b3158df74f"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:58:19Z",
+        "message": "failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:56:45Z",
+          "name": "order-service.18e83c87b6974ec8",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82037",
+          "uid": "a6e4021b-6665-458f-a389-4b7539eaa2e8"
+        },
+        "reason": "FailedGetResourceMetric",
+        "reportingComponent": "horizontal-pod-autoscaler",
+        "reportingInstance": "",
+        "source": {
+          "component": "horizontal-pod-autoscaler"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 3,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:56:45Z",
+        "involvedObject": {
+          "apiVersion": "autoscaling/v2",
+          "kind": "HorizontalPodAutoscaler",
+          "name": "order-service",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81881",
+          "uid": "a8b91881-5741-42ff-b9f2-d9b3158df74f"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:58:19Z",
+        "message": "invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:56:45Z",
+          "name": "order-service.18e83c87c7b0c75d",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82039",
+          "uid": "438eb64a-dd3d-4197-afa1-edf3e67db813"
+        },
+        "reason": "FailedComputeMetricsReplicas",
+        "reportingComponent": "horizontal-pod-autoscaler",
+        "reportingInstance": "",
+        "source": {
+          "component": "horizontal-pod-autoscaler"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 5,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:57:17Z",
+        "involvedObject": {
+          "apiVersion": "autoscaling/v2",
+          "kind": "HorizontalPodAutoscaler",
+          "name": "order-service",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81910",
+          "uid": "a8b91881-5741-42ff-b9f2-d9b3158df74f"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:59:06Z",
+        "message": "failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:57:17Z",
+          "name": "order-service.18e83c8f560ad9dd",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82110",
+          "uid": "d72eaa6a-ea2b-489c-977b-a5c477c56cc2"
+        },
+        "reason": "FailedGetResourceMetric",
+        "reportingComponent": "horizontal-pod-autoscaler",
+        "reportingInstance": "",
+        "source": {
+          "component": "horizontal-pod-autoscaler"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 5,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:57:18Z",
+        "involvedObject": {
+          "apiVersion": "autoscaling/v2",
+          "kind": "HorizontalPodAutoscaler",
+          "name": "order-service",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81910",
+          "uid": "a8b91881-5741-42ff-b9f2-d9b3158df74f"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:59:06Z",
+        "message": "invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: unable to fetch metrics from resource metrics API: the server is currently unable to handle the request (get pods.metrics.k8s.io)",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:57:18Z",
+          "name": "order-service.18e83c8f6548da86",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82111",
+          "uid": "205ea7cb-67eb-49b6-9366-4d78c6050ed7"
+        },
+        "reason": "FailedComputeMetricsReplicas",
+        "reportingComponent": "horizontal-pod-autoscaler",
+        "reportingInstance": "",
+        "source": {
+          "component": "horizontal-pod-autoscaler"
+        },
+        "type": "Warning"
+      },
+      {
+        "action": "Binding",
+        "apiVersion": "v1",
+        "eventTime": "2026-11-15T13:55:21.954512Z",
+        "firstTimestamp": null,
+        "involvedObject": {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "name": "payment-service-simulator-5987c565f8-rf9hg",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81697",
+          "uid": "9af66436-b123-4ec6-9e25-563f5e40ecbb"
+        },
+        "kind": "Event",
+        "lastTimestamp": null,
+        "message": "Successfully assigned resilience-hpa-1794750921/payment-service-simulator-5987c565f8-rf9hg to orbstack",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "payment-service-simulator-5987c565f8-rf9hg.18e83c745b676fed",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81719",
+          "uid": "bab39f72-f2a3-4a54-be60-e787d673bd05"
+        },
+        "reason": "Scheduled",
+        "reportingComponent": "default-scheduler",
+        "reportingInstance": "default-scheduler-orbstack",
+        "source": {},
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:23Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{payment-service-simulator}",
+          "kind": "Pod",
+          "name": "payment-service-simulator-5987c565f8-rf9hg",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81705",
+          "uid": "9af66436-b123-4ec6-9e25-563f5e40ecbb"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:23Z",
+        "message": "Container image \"resilience/payment-service-simulator:validation-v2\" already present on machine and can be accessed by the pod",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:23Z",
+          "name": "payment-service-simulator-5987c565f8-rf9hg.18e83c74cf3ac42c",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81756",
+          "uid": "dfe54eb9-0dd8-4d0e-beb5-15090bd1b07e"
+        },
+        "reason": "Pulled",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:24Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{payment-service-simulator}",
+          "kind": "Pod",
+          "name": "payment-service-simulator-5987c565f8-rf9hg",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81705",
+          "uid": "9af66436-b123-4ec6-9e25-563f5e40ecbb"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:24Z",
+        "message": "Container created",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:24Z",
+          "name": "payment-service-simulator-5987c565f8-rf9hg.18e83c74ec1ae073",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81762",
+          "uid": "52654054-52d6-411f-8aea-99b09d7b5653"
+        },
+        "reason": "Created",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:24Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{payment-service-simulator}",
+          "kind": "Pod",
+          "name": "payment-service-simulator-5987c565f8-rf9hg",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81705",
+          "uid": "9af66436-b123-4ec6-9e25-563f5e40ecbb"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:24Z",
+        "message": "Container started",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:24Z",
+          "name": "payment-service-simulator-5987c565f8-rf9hg.18e83c750839d965",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81765",
+          "uid": "3022661c-e4ac-47e5-b502-524cf7ee6d05"
+        },
+        "reason": "Started",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 7,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:28Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{payment-service-simulator}",
+          "kind": "Pod",
+          "name": "payment-service-simulator-5987c565f8-rf9hg",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81705",
+          "uid": "9af66436-b123-4ec6-9e25-563f5e40ecbb"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:40Z",
+        "message": "Startup probe failed: Get \"http://192.168.194.111:9091/actuator/health\": dial tcp 192.168.194.111:9091: connect: connection refused",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:28Z",
+          "name": "payment-service-simulator-5987c565f8-rf9hg.18e83c75d4b258e7",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81813",
+          "uid": "bcbe6696-b9e6-4e46-875b-b12841a62f30"
+        },
+        "reason": "Unhealthy",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:59:03Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{payment-service-simulator}",
+          "kind": "Pod",
+          "name": "payment-service-simulator-5987c565f8-rf9hg",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81705",
+          "uid": "9af66436-b123-4ec6-9e25-563f5e40ecbb"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:59:03Z",
+        "message": "Liveness probe failed: Get \"http://192.168.194.111:9091/actuator/health\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:59:04Z",
+          "name": "payment-service-simulator-5987c565f8-rf9hg.18e83ca7fb39efb7",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82106",
+          "uid": "6190686b-1a74-4925-9367-dfc52acd8123"
+        },
+        "reason": "Unhealthy",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:59:04Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{payment-service-simulator}",
+          "kind": "Pod",
+          "name": "payment-service-simulator-5987c565f8-rf9hg",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81705",
+          "uid": "9af66436-b123-4ec6-9e25-563f5e40ecbb"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:59:04Z",
+        "message": "Readiness probe failed: Get \"http://192.168.194.111:9091/actuator/health\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:59:05Z",
+          "name": "payment-service-simulator-5987c565f8-rf9hg.18e83ca8435df16f",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "82109",
+          "uid": "2c3f3f4b-cc7f-4388-9fd0-d8954b0bbf71"
+        },
+        "reason": "Unhealthy",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:21Z",
+        "involvedObject": {
+          "apiVersion": "apps/v1",
+          "kind": "ReplicaSet",
+          "name": "payment-service-simulator-5987c565f8",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81666",
+          "uid": "aa6ad8d8-bec1-485c-8f3e-8e1e4e293420"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:21Z",
+        "message": "Created pod: payment-service-simulator-5987c565f8-rf9hg",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "payment-service-simulator-5987c565f8.18e83c745a314315",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81708",
+          "uid": "d13db7d4-2e97-4cbd-b973-9bd1e76cb744"
+        },
+        "reason": "SuccessfulCreate",
+        "reportingComponent": "replicaset-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "replicaset-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:21Z",
+        "involvedObject": {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "payment-service-simulator",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81665",
+          "uid": "23a58a59-5e91-4721-aea0-8d0618bfb829"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:21Z",
+        "message": "Scaled up replica set payment-service-simulator-5987c565f8 from 0 to 1",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "payment-service-simulator.18e83c74534581c8",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81668",
+          "uid": "2dd54afc-d43d-4f6e-b7df-a70136d9236d"
+        },
+        "reason": "ScalingReplicaSet",
+        "reportingComponent": "deployment-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "deployment-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 2,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:21Z",
+        "involvedObject": {
+          "apiVersion": "policy/v1",
+          "kind": "PodDisruptionBudget",
+          "name": "payment-service-simulator",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81673",
+          "uid": "166e361c-1698-42ce-b609-f6c3a9493740"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:21Z",
+        "message": "No matching pods found",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "payment-service-simulator.18e83c7455684c09",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81677",
+          "uid": "a367ce6f-e75b-4bb9-8405-9b464b584692"
+        },
+        "reason": "NoPods",
+        "reportingComponent": "controllermanager",
+        "reportingInstance": "",
+        "source": {
+          "component": "controllermanager"
+        },
+        "type": "Normal"
+      },
+      {
+        "action": "Binding",
+        "apiVersion": "v1",
+        "eventTime": "2026-11-15T13:55:22.039080Z",
+        "firstTimestamp": null,
+        "involvedObject": {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "name": "retry-budget-56977c88b-l82kn",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81737",
+          "uid": "6dcc65d5-af69-4f8b-97d3-cdaaeb83a5fe"
+        },
+        "kind": "Event",
+        "lastTimestamp": null,
+        "message": "Successfully assigned resilience-hpa-1794750921/retry-budget-56977c88b-l82kn to orbstack",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:22Z",
+          "name": "retry-budget-56977c88b-l82kn.18e83c746071d5fe",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81741",
+          "uid": "c1a2c498-79b8-4c0e-beaf-c9b7a2b03741"
+        },
+        "reason": "Scheduled",
+        "reportingComponent": "default-scheduler",
+        "reportingInstance": "default-scheduler-orbstack",
+        "source": {},
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:24Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{redis}",
+          "kind": "Pod",
+          "name": "retry-budget-56977c88b-l82kn",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81738",
+          "uid": "6dcc65d5-af69-4f8b-97d3-cdaaeb83a5fe"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:24Z",
+        "message": "Container image \"redis:7.4.6-alpine\" already present on machine and can be accessed by the pod",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:24Z",
+          "name": "retry-budget-56977c88b-l82kn.18e83c74d861ac3c",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81758",
+          "uid": "56356333-c796-43a4-8a8c-66c633a1aa0a"
+        },
+        "reason": "Pulled",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:24Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{redis}",
+          "kind": "Pod",
+          "name": "retry-budget-56977c88b-l82kn",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81738",
+          "uid": "6dcc65d5-af69-4f8b-97d3-cdaaeb83a5fe"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:24Z",
+        "message": "Container created",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:24Z",
+          "name": "retry-budget-56977c88b-l82kn.18e83c750ce26543",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81766",
+          "uid": "e3235674-46c0-4b4f-9f47-383fb97cfbd2"
+        },
+        "reason": "Created",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:25Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{redis}",
+          "kind": "Pod",
+          "name": "retry-budget-56977c88b-l82kn",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81738",
+          "uid": "6dcc65d5-af69-4f8b-97d3-cdaaeb83a5fe"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:25Z",
+        "message": "Container started",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:25Z",
+          "name": "retry-budget-56977c88b-l82kn.18e83c75221608a7",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81767",
+          "uid": "234b359c-8fc4-45fe-ac1d-dc9c337bc523"
+        },
+        "reason": "Started",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 25,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:56:14Z",
+        "involvedObject": {
+          "apiVersion": "v1",
+          "fieldPath": "spec.containers{redis}",
+          "kind": "Pod",
+          "name": "retry-budget-56977c88b-l82kn",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81738",
+          "uid": "6dcc65d5-af69-4f8b-97d3-cdaaeb83a5fe"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:57:03Z",
+        "message": "Readiness probe failed: command timed out: \"redis-cli ping\" timed out after 1s",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:56:14Z",
+          "name": "retry-budget-56977c88b-l82kn.18e83c8097cebc6e",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81931",
+          "uid": "3c6509f3-abf7-4a9c-93a7-93fb3e79df85"
+        },
+        "reason": "Unhealthy",
+        "reportingComponent": "kubelet",
+        "reportingInstance": "orbstack",
+        "source": {
+          "component": "kubelet",
+          "host": "orbstack"
+        },
+        "type": "Warning"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:22Z",
+        "involvedObject": {
+          "apiVersion": "apps/v1",
+          "kind": "ReplicaSet",
+          "name": "retry-budget-56977c88b",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81713",
+          "uid": "c9e4ef08-b208-440e-beee-50c85cdeca44"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:22Z",
+        "message": "Created pod: retry-budget-56977c88b-l82kn",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:22Z",
+          "name": "retry-budget-56977c88b.18e83c745fe044ea",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81740",
+          "uid": "736ebb27-fe35-45d1-8ef0-95b4a7e211a4"
+        },
+        "reason": "SuccessfulCreate",
+        "reportingComponent": "replicaset-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "replicaset-controller"
+        },
+        "type": "Normal"
+      },
+      {
+        "apiVersion": "v1",
+        "count": 1,
+        "eventTime": null,
+        "firstTimestamp": "2026-11-15T13:55:21Z",
+        "involvedObject": {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "retry-budget",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81706",
+          "uid": "e6341831-8354-4d37-b880-cea8831f874f"
+        },
+        "kind": "Event",
+        "lastTimestamp": "2026-11-15T13:55:21Z",
+        "message": "Scaled up replica set retry-budget-56977c88b from 0 to 1",
+        "metadata": {
+          "creationTimestamp": "2026-11-15T13:55:21Z",
+          "name": "retry-budget.18e83c745c7b93da",
+          "namespace": "resilience-hpa-1794750921",
+          "resourceVersion": "81716",
+          "uid": "90cbb216-fd34-477d-abde-a4c72849475d"
+        },
+        "reason": "ScalingReplicaSet",
+        "reportingComponent": "deployment-controller",
+        "reportingInstance": "",
+        "source": {
+          "component": "deployment-controller"
+        },
+        "type": "Normal"
+      }
+    ],
+    "kind": "List",
+    "metadata": {
+      "resourceVersion": ""
+    }
+  },
+  "elapsedSeconds": 238.1141197681427,
+  "cleanup": "owned namespace deletion requested"
+}

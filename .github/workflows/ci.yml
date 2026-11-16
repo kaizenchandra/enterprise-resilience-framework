@@ -1,0 +1,28 @@
+name: resilience
+on: [ push, pull_request ]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis:7.4.6-alpine
+        ports: [ '6379:6379' ]
+    env:
+      REDIS_TEST_URI: redis://127.0.0.1:6379
+    defaults:
+      run:
+        working-directory: enterprise-resilience-framework
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - run: mvn -B -Pexternal,soak -Dsoak.seconds=60 verify
+      - run: docker build -f docker/Dockerfile --build-arg SERVICE=order-service -t resilience/order-service:ci .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-reports
+          path: enterprise-resilience-framework/**/target/surefire-reports/*

@@ -1,0 +1,29 @@
+{
+  "releaseDecision": "HOLD",
+  "testsPassed": 64,
+  "cni": {
+    "result": "PASS",
+    "checks": 15
+  },
+  "hpa": {
+    "initialResult": "PASS",
+    "postStressRepeatResult": "FAIL",
+    "repeatError": "Load job failed"
+  },
+  "redis": {
+    "functional": "PASS",
+    "strictDurability": "FAIL",
+    "primaryRecoveryMillis": 2210,
+    "quorumRecoveryMillis": 47027,
+    "quorumRecoveryWithin40Seconds": false
+  },
+  "healthyLoad": {
+    "100": "PASS",
+    "1000": "FAIL",
+    "10000": "FAIL",
+    "100000": "FAIL"
+  },
+  "metricsAvailableAfterRestart": true,
+  "stabilityUnderLoad": "NOT QUALIFIED",
+  "temporaryResources": "owned HA/CNI/HPA/load resources removed; metrics-server and original demo retained"
+}
